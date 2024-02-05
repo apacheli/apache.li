@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+
+:root {
+  --bg: #101418;
+  --bg-nav: #080a0c;
+  --light: #ffffff0d;
+  --nmbt: background-color var(--time), fill var(--time);
+  --subtext: #787c80;
+  --text: #f0f8ff;
+  --theme: #40c0ff;
+  --time: .25s;
+}
+
+::selection {
+  background: var(--theme);
+  color: #ffffff;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+}
+
+input {
+  display: none;
+}
+
+a,
+figcaption,
+h1,
+h2,
+li,
+p {
+  color: var(--text);
+  line-height: 2;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+figure {
+  margin: 0 0 2rem 0;
+}
+
+figure img {
+  display: block;
+  height: auto;
+  margin: auto;
+  max-width: 100%;
+}
+
+figcaption {
+  color: var(--subtext);
+  font-style: italic;
+}
+
+svg {
+  height: inherit;
+  width: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hd {
+  align-items: center;
+  background-color: var(--bg-nav);
+  display: flex;
+  height: 4rem;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  margin-left: .5rem;
+}
+
+.logo-icon {
+  background: no-repeat center/cover url("/assets/favicon.png");
+  height: 3rem;
+  width: 3rem;
+}
+
+.logo-text {
+  color: var(--subtext);
+  margin-left: .5rem;
+}
+
+.logo:hover>.logo-icon {
+  animation: 2.5s linear infinite logo-rotate;
+}
+
+@keyframes logo-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navigator {
+  margin-right: .5rem;
+}
+
+.navigator ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+
+.navigator a {
+  border-radius: 1rem;
+  padding: .5rem 3rem;
+  position: relative;
+  transition: background-color var(--time), color var(--time);
+}
+
+.navigator a:hover {
+  background-color: var(--light);
+  color: var(--theme);
+}
+
+.navigator a::after {
+  background-color: var(--theme);
+  border-radius: .125rem;
+  bottom: -.75rem;
+  content: "";
+  height: .25rem;
+  left: 0;
+  position: absolute;
+  transition: width var(--time);
+  width: 0;
+}
+
+.navigator a:hover::after {
+  width: 100%;
+}
+
+.nm-button {
+  border-radius: .25rem;
+  cursor: pointer;
+  display: none;
+  fill: var(--text);
+  height: 2rem;
+  position: absolute;
+  right: .75rem;
+  transition: var(--nmbt);
+  width: 2rem;
+}
+
+.nm-button:hover {
+  background-color: var(--light);
+  fill: var(--theme);
+}
+
+.ft {
+  background-color: var(--bg-nav);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.socials {
+  border-radius: .5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 0;
+}
+
+.socials a {
+  border-radius: .25rem;
+  display: block;
+  fill: var(--text);
+  height: 2rem;
+  width: 2rem;
+}
+
+.ft p {
+  color: var(--subtext);
+}
+
+.scroll-to-top {
+  background-color: var(--light);
+  border-radius: 50%;
+  bottom: 1rem;
+  fill: var(--text);
+  height: 3rem;
+  left: 1rem;
+  position: fixed;
+  width: 3rem;
+}
+
+.scroll-to-top svg {
+  height: 50%;
+  margin: 25% 0 0 25%;
+  width: 50%;
+}
+
+.content {
+  margin: 8rem auto 0;
+  max-width: 90%;
+  width: 48rem;
+}
+
+.top-mg {
+  margin: 4rem auto 0;
+}
+
+.tc {
+  text-align: center;
+}
+
+.title h2 {
+  color: var(--subtext);
+}
+
+.portrait {
+  aspect-ratio: 1/1;
+  background: center/cover no-repeat url("/assets/portrait.png");
+  border: .5rem solid var(--text);
+  border-radius: 50%;
+  margin: auto;
+  max-width: 32rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.card:hover {
+  background-color: var(--light);
+}
+
+.card p {
+  color: var(--subtext);
+}
+
+.card span {
+  color: var(--theme);
+  float: right;
+}
+
+.card span::before {
+  content: "#";
+}
+
+.text a {
+  color: var(--theme);
+}
+
+.text section {
+  margin-top: 4rem;
+}
+
+.text p {
+  margin-bottom: .5rem;
+}
+
+.text h2 {
+  margin-bottom: .5rem;
+  position: relative;
+}
+
+.text h2::before {
+  background-color: var(--subtext);
+  bottom: 0;
+  content: "";
+  height: .0625rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.text ul {
+  list-style: inside;
+  padding: .5rem;
+}
+
+code {
+  background-color: var(--light);
+  border-radius: .5rem;
+  color: var(--subtext);
+  font-size: 1rem;
+  padding: .25rem;
+}
+
+@media screen and (max-width: 72rem) {
+  .navigator {
+    background-color: var(--bg-nav);
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    right: -24rem;
+    top: 0;
+    width: 24rem;
+  }
+
+  .navigator ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .navigator a {
+    border-radius: 0;
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .navigator a::after {
+    border-radius: 0;
+  }
+
+  .nm-button {
+    display: block;
+  }
+
+  .x-button {
+    right: -23.25rem;
+  }
+
+  #menu-button:checked~.navigator {
+    right: 0;
+    transition: right var(--time);
+  }
+
+  #menu-button:checked~.x-button {
+    right: .75rem;
+    transition: var(--nmbt), right var(--time);
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  .navigator {
+    right: -100%;
+    width: 100%;
+  }
+
+  .navigator a {
+    text-align: center;
+  }
+
+  .x-button {
+    right: calc(-100% + .75rem);
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --bg-nav: #d2d9e0;
+    --light: #0000000d;
+    --subtext: #607890;
+    --text: #202830;
+    --theme: #3090c0;
+  }
+
+  .logo-icon {
+    background: no-repeat center/cover url("/assets/favicon-dark.png");
+  }
+
+  .logo:hover>.logo-icon {
+    animation-direction: reverse;
+  }
+}
